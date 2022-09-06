@@ -1,0 +1,56 @@
+ {% extends 'base.html' %}
+ {% load bootstrap4 %}
+    {% block body %}
+    <!-- bradcam_area  -->
+    <div class="bradcam_area bradcam_bg_1">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="bradcam_text">
+                        <h3>Add New Job</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ bradcam_area  -->
+
+    <div class="job_details_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="job_details_header">
+                        <div class="single_jobs white-bg d-flex justify-content-between">
+                            <div class="jobs_left d-flex align-items-center">
+                             
+                                <div class="jobs_conetent">
+                                    <a href="#"><h4>{{jobd}}</h4></a>
+                              
+                                </div>
+                            </div>
+                            <div class="jobs_right">
+                                <div class="apply_now">
+                                    <a class="heart_mark" href="#"> <i class="ti-heart"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+               
+                    <div class="apply_job_form white-bg">
+                        <h4>Post New Job</h4>
+                        <form  method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {% bootstrap_form  form2 %}
+                            {% buttons %}
+                                 <button class="boxed-btn3 w-100" type="submit">Post Now</button>
+                            {% endbuttons %}
+                        </form>
+                    </div>
+                </div>
+ 
+            </div>
+        </div>
+    </div>
+    {% endblock body %}
+
+     
